@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iNX-1r-zkB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Choose Location View Controller-->
+        <scene sceneID="oKd-0w-tTm">
+            <objects>
+                <viewController storyboardIdentifier="ChooseLocationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iNX-1r-zkB" customClass="ChooseLocationViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nSy-1b-mKQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="og0-BZ-fMi"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="58r-VH-WPL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar opaque="NO" contentMode="scaleToFill" barStyle="black" prompt="Enter city or zip code" showsCancelButton="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbe-YP-b4v">
+                                <rect key="frame" x="0.0" y="44" width="414" height="90"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" systemColor="systemTealColor"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" textContentType="location"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fls-iC-jE5">
+                                <rect key="frame" x="0.0" y="134" width="414" height="728"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="57" id="7e4-IH-Noy">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="57"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7e4-IH-Noy" id="kib-bz-jda">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="57"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <color key="tintColor" name="AccentColor"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4j-X1-jYA">
+                                <rect key="frame" x="16" y="44" width="12.5" height="22"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="chevron.backward" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Lx-MC-hFX"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fls-iC-jE5" secondAttribute="trailing" id="00k-Jv-0rC"/>
+                            <constraint firstItem="fls-iC-jE5" firstAttribute="top" secondItem="Lbe-YP-b4v" secondAttribute="bottom" id="7WR-8A-8Fh"/>
+                            <constraint firstItem="og0-BZ-fMi" firstAttribute="top" secondItem="fls-iC-jE5" secondAttribute="bottom" id="7jP-E4-fug"/>
+                            <constraint firstItem="E4j-X1-jYA" firstAttribute="leading" secondItem="6Lx-MC-hFX" secondAttribute="leading" constant="16" id="BsJ-or-0oj"/>
+                            <constraint firstAttribute="trailing" secondItem="Lbe-YP-b4v" secondAttribute="trailing" id="USa-QU-6RA"/>
+                            <constraint firstItem="E4j-X1-jYA" firstAttribute="top" secondItem="6Lx-MC-hFX" secondAttribute="top" id="Zf1-ch-Yto"/>
+                            <constraint firstItem="fls-iC-jE5" firstAttribute="leading" secondItem="58r-VH-WPL" secondAttribute="leading" id="a7u-Qh-y2K"/>
+                            <constraint firstItem="Lbe-YP-b4v" firstAttribute="leading" secondItem="58r-VH-WPL" secondAttribute="leading" id="l46-jL-Kad"/>
+                            <constraint firstItem="Lbe-YP-b4v" firstAttribute="top" secondItem="58r-VH-WPL" secondAttribute="topMargin" id="uUA-Pi-tRl"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="backButton" destination="E4j-X1-jYA" id="9xj-Xl-i8e"/>
+                        <outlet property="searchBar" destination="Lbe-YP-b4v" id="rez-Tj-h5f"/>
+                        <outlet property="tableView" destination="fls-iC-jE5" id="4fI-aY-weC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cB6-LY-F06" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1526.0869565217392" y="980.35714285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

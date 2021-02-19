@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dgz-XG-Qdy">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="hO8-No-33p">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Dgz-XG-Qdy" customClass="SettingsViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mtm-80-c2V"/>
+                        <viewControllerLayoutGuide type="bottom" id="h64-9n-QSI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PZw-Tb-Za1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKB-GW-BmA">
+                                <rect key="frame" x="354" y="807" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="HTa-ZB-n1m"/>
+                                    <constraint firstAttribute="height" constant="40" id="ffp-Js-wHi"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HEK-D2-eDd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="747"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemTealColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VP5-Zv-CPO"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="HEK-D2-eDd" firstAttribute="top" secondItem="PZw-Tb-Za1" secondAttribute="top" id="0S6-ox-EBj"/>
+                            <constraint firstItem="HEK-D2-eDd" firstAttribute="leading" secondItem="PZw-Tb-Za1" secondAttribute="leading" id="Aoo-0e-w89"/>
+                            <constraint firstAttribute="trailing" secondItem="RKB-GW-BmA" secondAttribute="trailing" constant="20" id="EOT-n9-mjh"/>
+                            <constraint firstAttribute="trailing" secondItem="HEK-D2-eDd" secondAttribute="trailing" id="GNQ-kG-QZS"/>
+                            <constraint firstItem="HEK-D2-eDd" firstAttribute="top" secondItem="Mtm-80-c2V" secondAttribute="bottom" id="fOe-hY-9wp"/>
+                            <constraint firstItem="RKB-GW-BmA" firstAttribute="top" secondItem="HEK-D2-eDd" secondAttribute="bottom" constant="16" id="n6W-WB-oim"/>
+                            <constraint firstItem="h64-9n-QSI" firstAttribute="top" secondItem="RKB-GW-BmA" secondAttribute="bottom" constant="15" id="suJ-gy-BoU"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0S6-ox-EBj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="addLocationButton" destination="RKB-GW-BmA" id="Y7o-r6-vEL"/>
+                        <outlet property="locationsTableView" destination="HEK-D2-eDd" id="eCZ-jA-Mn6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lyb-Iq-R9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2407" y="981"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

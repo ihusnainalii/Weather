@@ -1,0 +1,44 @@
+{
+  "configurations" : [
+    {
+      "id" : "168FDCAE-ED4E-4AD8-908F-77D0504379C8",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:WeatherApp.xcodeproj",
+          "identifier" : "295B46AC25B3F76600A3C1AF",
+          "name" : "WeatherApp"
+        }
+      ]
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:WeatherApp.xcodeproj",
+      "identifier" : "295B46AC25B3F76600A3C1AF",
+      "name" : "WeatherApp"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:WeatherApp.xcodeproj",
+        "identifier" : "295B46C225B3F76600A3C1AF",
+        "name" : "WeatherAppTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:WeatherApp.xcodeproj",
+        "identifier" : "295B46CD25B3F76600A3C1AF",
+        "name" : "WeatherAppUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

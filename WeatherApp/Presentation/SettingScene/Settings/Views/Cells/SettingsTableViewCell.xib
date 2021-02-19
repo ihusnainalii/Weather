@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsTableViewCell" id="TUv-4S-JvX" customClass="SettingsTableViewCell" customModule="WeatherApp">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TUv-4S-JvX" id="J3c-Zo-rFZ">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MIb-Ne-Ga5">
+                        <rect key="frame" x="16" y="0.0" width="382" height="44"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Francisco, CA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="KO8-kQ-IA0">
+                                <rect key="frame" x="0.0" y="8" width="132" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="78d-fs-xDE">
+                                <rect key="frame" x="312" y="6.5" width="32" height="31"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="78d-fs-xDE" secondAttribute="height" multiplier="1:1" id="OLi-iR-win"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSU-wF-NDk">
+                                <rect key="frame" x="360" y="8" width="22" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="78d-fs-xDE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KO8-kQ-IA0" secondAttribute="trailing" constant="8" id="0EN-51-JvJ"/>
+                            <constraint firstAttribute="trailing" secondItem="oSU-wF-NDk" secondAttribute="trailing" id="3Zx-Oh-kka"/>
+                            <constraint firstItem="78d-fs-xDE" firstAttribute="top" secondItem="MIb-Ne-Ga5" secondAttribute="top" constant="6" id="9gZ-u1-71A"/>
+                            <constraint firstAttribute="bottom" secondItem="KO8-kQ-IA0" secondAttribute="bottom" constant="8" id="Llh-JS-zhY"/>
+                            <constraint firstItem="KO8-kQ-IA0" firstAttribute="top" secondItem="MIb-Ne-Ga5" secondAttribute="top" constant="8" id="VXG-gR-8Ql"/>
+                            <constraint firstItem="oSU-wF-NDk" firstAttribute="leading" secondItem="78d-fs-xDE" secondAttribute="trailing" constant="16" id="ZHN-eN-QZi"/>
+                            <constraint firstItem="oSU-wF-NDk" firstAttribute="top" secondItem="MIb-Ne-Ga5" secondAttribute="top" constant="8" id="bRw-V2-eeC"/>
+                            <constraint firstItem="KO8-kQ-IA0" firstAttribute="leading" secondItem="MIb-Ne-Ga5" secondAttribute="leading" id="gDh-gh-hgL"/>
+                            <constraint firstAttribute="bottom" secondItem="oSU-wF-NDk" secondAttribute="bottom" constant="8" id="pPu-NE-hzt"/>
+                            <constraint firstAttribute="bottom" secondItem="78d-fs-xDE" secondAttribute="bottom" constant="6" id="znv-Jf-7Fr"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" systemColor="systemTealColor"/>
+                <constraints>
+                    <constraint firstItem="MIb-Ne-Ga5" firstAttribute="top" secondItem="J3c-Zo-rFZ" secondAttribute="top" id="0MS-Ab-I0P"/>
+                    <constraint firstItem="MIb-Ne-Ga5" firstAttribute="leading" secondItem="J3c-Zo-rFZ" secondAttribute="leading" constant="16" id="QLq-Ty-giU"/>
+                    <constraint firstAttribute="trailing" secondItem="MIb-Ne-Ga5" secondAttribute="trailing" constant="16" id="TDa-SZ-btj"/>
+                    <constraint firstAttribute="bottom" secondItem="MIb-Ne-Ga5" secondAttribute="bottom" id="yFr-rs-WiI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cityNameLabel" destination="KO8-kQ-IA0" id="6fr-KK-LWR"/>
+                <outlet property="temperatureLabel" destination="oSU-wF-NDk" id="beX-Lw-Fv0"/>
+                <outlet property="weatherConditionImageView" destination="78d-fs-xDE" id="CHM-gB-X8C"/>
+            </connections>
+            <point key="canvasLocation" x="-52" y="-68"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HourlyWeatherCollectionViewCell" id="Gzh-tI-9Sb" customClass="HourlyWeatherCollectionViewCell" customModule="WeatherApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="136" height="139"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="136" height="139"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100º" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiS-3h-hSS">
+                        <rect key="frame" x="17" y="120.5" width="102" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yf6-60-EUC">
+                        <rect key="frame" x="13" y="5" width="110" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="9uv-xp-AYB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5Y2-93-gnc">
+                        <rect key="frame" x="19" y="25.5" width="98" height="87.5"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" systemColor="systemTealColor"/>
+            <constraints>
+                <constraint firstItem="5Y2-93-gnc" firstAttribute="centerY" secondItem="Gzh-tI-9Sb" secondAttribute="centerY" constant="-0.25" id="1Wm-ba-Fc8"/>
+                <constraint firstItem="Yf6-60-EUC" firstAttribute="centerX" secondItem="5Y2-93-gnc" secondAttribute="centerX" id="3ag-N6-zEW"/>
+                <constraint firstItem="tiS-3h-hSS" firstAttribute="leading" secondItem="Gzh-tI-9Sb" secondAttribute="leadingMargin" constant="1" id="59Z-vC-H9A"/>
+                <constraint firstItem="5Y2-93-gnc" firstAttribute="top" secondItem="Yf6-60-EUC" secondAttribute="bottom" constant="7" id="DV0-sI-kb4"/>
+                <constraint firstItem="Yf6-60-EUC" firstAttribute="top" secondItem="Gzh-tI-9Sb" secondAttribute="top" constant="5" id="Hyj-iL-hKG"/>
+                <constraint firstItem="5Y2-93-gnc" firstAttribute="centerX" secondItem="tiS-3h-hSS" secondAttribute="centerX" id="IEL-K8-2XB"/>
+                <constraint firstItem="Yf6-60-EUC" firstAttribute="leading" secondItem="Gzh-tI-9Sb" secondAttribute="leadingMargin" constant="-3" id="Mrl-r6-3xC"/>
+                <constraint firstItem="tiS-3h-hSS" firstAttribute="top" secondItem="5Y2-93-gnc" secondAttribute="bottom" constant="7" id="NtE-Cg-zTC"/>
+                <constraint firstItem="5Y2-93-gnc" firstAttribute="leading" secondItem="Gzh-tI-9Sb" secondAttribute="leadingMargin" constant="3" id="TuV-3g-u8k"/>
+                <constraint firstItem="Yf6-60-EUC" firstAttribute="centerX" secondItem="Gzh-tI-9Sb" secondAttribute="centerX" id="e4W-ib-BFC"/>
+                <constraint firstAttribute="bottom" secondItem="tiS-3h-hSS" secondAttribute="bottom" constant="5" id="q9o-7g-NgO"/>
+            </constraints>
+            <size key="customSize" width="136" height="139"/>
+            <connections>
+                <outlet property="imageView" destination="5Y2-93-gnc" id="dVY-G3-cvj"/>
+                <outlet property="temperatureLabel" destination="tiS-3h-hSS" id="Rcp-7Z-K1w"/>
+                <outlet property="timeLabel" destination="Yf6-60-EUC" id="is1-y6-ske"/>
+            </connections>
+            <point key="canvasLocation" x="68.115942028985515" y="108.81696428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
