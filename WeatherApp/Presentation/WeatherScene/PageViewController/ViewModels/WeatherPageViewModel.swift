@@ -56,7 +56,6 @@ final class DefaultWeatherPageViewModel: NSObject, WeatherPageViewModel
     }
     
     func fetchCities() {
-        
         DispatchQueue.global(qos: .background).async { [weak self] in
             let fetchGroup = DispatchGroup()
             fetchGroup.enter()

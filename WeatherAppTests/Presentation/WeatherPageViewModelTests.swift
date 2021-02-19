@@ -44,31 +44,29 @@ class WeatherPageViewModelTests: XCTestCase
     func createViewModel (cities: [String] ,error: Error? = nil) -> WeatherPageViewModel {
         let useCase = MockFetchUserCitiesUseCase(cities, error)
         useCase.expectation = self.expectation(description: "Recent cities fetched")
+        let actions = WeatherPageViewModelActions(
+            createWeatherViewControllers: { _ in [] }, showSettingView: {}, showChooseLocationView: {})
         let viewModel = DefaultWeatherPageViewModel(
             dependency: DefaultWeatherPageViewModel.Dependency(
                 fetchUseCase: useCase,
                 locationManager: LocationManager.shared,
-                actions: WeatherPageViewModelActions(
-                    createWeatherViewControllers: { (cities, nil) -> [WeatherViewController] in
-                        return cities.map { _ in WeatherViewController() }
-                    }, showSettingView: {
-                    })))
+                actions:actions))
         return viewModel
     }
     
     func testWhenFetchCitiesThenCitiesAreTheSame() {
         let viewModel = createViewModel(cities: mockCities)
-        viewModel.viewDidLoad()
+        viewModel.viewWillAppear()
         
-        XCTAssertEqual(viewModel.cities.value, mockCities)
         waitForExpectations(timeout: 0.1) { (error) in
             XCTAssertNil(error, error?.localizedDescription ?? "")
         }
+        XCTAssertEqual(viewModel.cities.value, mockCities)
     }
     
     func testWhenFetchCitiesThenCreatePageViewModelWithErrorThenShowError() {
         let viewModel = createViewModel(cities: mockCities, error: FetchRecentDataError.someError)
-        viewModel.viewDidLoad()
+        viewModel.viewWillAppear()
         viewModel.errorMessage.observe(on: self) { (message) in
             guard let m = message else { return }
             XCTAssertEqual(m, FetchRecentDataError.someError.localizedDescription)
@@ -81,7 +79,7 @@ class WeatherPageViewModelTests: XCTestCase
     func testFirstLaunch() {
         let viewModel = createViewModel(cities: [])
         viewModel.retry()
-        XCTAssertEqual(viewModel.cities.value, [])
+        XCTAssertEqual(viewModel.cities.value, nil)
         waitForExpectations(timeout: 0.1) { (error) in
             XCTAssertNil(error, error?.localizedDescription ?? "")
         }
