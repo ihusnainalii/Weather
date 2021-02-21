@@ -335,6 +335,7 @@ extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         printIfDebug(error.localizedDescription)
         self.didComplete(location: nil, error: error as NSError?)
+        self.didCompleteGeocoding(location: nil, placemark: nil, error: error as NSError?)
     }
     
 }
