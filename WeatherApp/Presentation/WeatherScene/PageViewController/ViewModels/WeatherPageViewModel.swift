@@ -37,7 +37,7 @@ final class DefaultWeatherPageViewModel: NSObject, WeatherPageViewModel
     }
     let cities = Observable<[String]?>(.none)
     
-     var numberOfCities: Int {
+    var numberOfCities: Int {
         get { return cities.value?.count ?? 0 }
     }
     
@@ -56,24 +56,16 @@ final class DefaultWeatherPageViewModel: NSObject, WeatherPageViewModel
     }
     
     func fetchCities() {
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            let fetchGroup = DispatchGroup()
-            fetchGroup.enter()
-            self?.fetchSavedCities { fetchGroup.leave() }
-            fetchGroup.wait()
-            if let locationEnabled = self?.isLocationEnabled, locationEnabled == true {
-                fetchGroup.enter()
-                self?.getLocation { fetchGroup.leave() }
-                fetchGroup.wait()
-                
+        fetchSavedCities { [weak self] in
+            if self?.isLocationEnabled == true {
+                self?.getLocation()
             }
-            DispatchQueue.main.async {
-                if self?.numberOfCities == 0 {
-                    self?.showLocationView()
-                }
+            if self?.numberOfCities == 0 {
+                self?.showLocationView()
             }
         }
     }
+    
     
     private func fetchSavedCities(completion: (() -> Void)? = nil) {
         dependency.fetchUseCase.execute { [weak self] (result) in
@@ -121,6 +113,8 @@ extension DefaultWeatherPageViewModel {
         fetchCities()
     }
     func showLocationView() {
-        dependency.actions.showChooseLocationView()
+        DispatchQueue.main.async {
+            self.dependency.actions.showChooseLocationView()
+        }
     }
 }
